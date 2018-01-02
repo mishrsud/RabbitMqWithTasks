@@ -1,0 +1,30 @@
+* text=auto
+*.cs      text diff=csharp
+*.html    text diff=html
+*.css     text
+*.js      text
+*.sql     text
+*.xaml    text
+*.tt      text
+*.ps1     text
+*.cmd     text
+*.msbuild text
+*.md      text
+.bat      text
+*.csproj text merge=union
+*.sln    text merge=union eol=crlf
+*.docx   diff=astextplain
+*.DOCX   diff=astextplain
+
+# Images should be treated as binary
+# (binary is a macro for -text -diff)
+*.png     binary
+*.jpeg    binary
+*.jpg    binary
+*.sdf     binary
+
+# absolute paths are ok, as are globs
+/**/postinst* text eol-lf
+
+# paths that don't start with / are treated relative to the .gitattributes folder
+relative/path/*.txt text eol-lf
